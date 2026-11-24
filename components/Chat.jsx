@@ -6,7 +6,7 @@ const Chat = () => {
 
   const fetchMessages = async () => {
     try {
-      const response = await fetch("https://localhost:7026/api/Chat/Messages");
+      const response = await fetch("https://livechat-api-vdru.onrender.com/api/Chat/Messages");
       const data = await response.json();
       setMessages(data);
     } catch (error) {
@@ -21,7 +21,7 @@ const Chat = () => {
     try {
       if (!newMessage.trim()) return;
       if (!username.trim()) return;
-      await fetch("https://localhost:7026/api/Chat/Message", {
+      await fetch("https://livechat-api-vdru.onrender.com/api/Chat/Message", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
